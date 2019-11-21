@@ -1,22 +1,33 @@
 import errorHandler from "errorhandler";
 
-import app from "./app";
+import mainApp from "./mainApp";
+import blogApp from "./blogApp";
+import { MAIN_PORT, BLOG_PORT } from "./util/secrets";
 
 /**
  * Error Handler. Provides full stack - remove for production
  */
-app.use(errorHandler());
+mainApp.use(errorHandler());
+blogApp.use(errorHandler());
 
 /**
  * Start Express server.
  */ 
-const server = app.listen(app.get("port"), () => {
+export const mainServer = mainApp.listen(MAIN_PORT, () => {
     console.log(
-        "  App is running at http://localhost:%d in %s mode",
-        app.get("port"),
-        app.get("env")
+        "  Main App is running at http://localhost:%d in %s mode",
+        MAIN_PORT,
+        mainApp.get("env")
     );
     console.log("  Press CTRL-C to stop\n");
 });
 
-export default server;
+export const blogServer = blogApp.listen(BLOG_PORT, () => {
+    console.log(
+        "  Blog App is running at http://localhost:%d in %s mode",
+        BLOG_PORT,
+        blogApp.get("env")
+    );
+    console.log("  Press CTRL-C to stop\n");
+});
+

@@ -32,11 +32,15 @@
           id="navbarSupportedContent"
         >
           <ul class="nav navbar-nav menu_nav justify-content-end">
-            <li class="nav-item active">
+            <li
+              class="nav-item <%= typeof tab === 'undefined' || tab === 1 ? 'active' : '' %>"
+            >
               <a class="nav-link" href="index.html">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feature.html">Blogs</a>
+            <li
+              class="nav-item <%= typeof tab !== 'undefined' && tab === 2 ? 'active' : '' %>"
+            >
+              <a class="nav-link" href="http://blog.antal-id.site">Blogs</a>
             </li>
             <!-- with dropdown -->
             <!-- <li class="nav-item submenu dropdown">

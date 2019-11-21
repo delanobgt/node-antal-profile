@@ -28,3 +28,6 @@ if (!MONGODB_URI) {
     }
     process.exit(1);
 }
+
+export const MAIN_PORT = process.env.MAIN_PORT || 3000;
+export const BLOG_PORT = process.env.BLOG_PORT || 3001;

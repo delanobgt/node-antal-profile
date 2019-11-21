@@ -32,8 +32,7 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true, useUni
 });
 
 // Express configuration
-console.log(process.env.PORT || 3000);
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.MAIN_PORT || 3000);
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "ejs");
 app.use(compression());
