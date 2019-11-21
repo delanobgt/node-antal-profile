@@ -12,13 +12,25 @@
         <h1>Bosan dengan angkot kini?</h1>
         <p class="h5 mb-3">Jangan lama-lamain lagi, segera #ANTALin aja!</p>
         <br />
-        <br />
-        <a
-          class="button button-shadow"
-          style="border: 2px solid cornflowerblue;"
-          href="#info1"
-          >Ih pernasaran...</a
-        >
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-sm-12 mt-4">
+            <a
+              class="button button-shadow"
+              style="border: 2px solid cornflowerblue;"
+              href="#info1"
+              >Ih pernasaran!</a
+            >
+          </div>
+          <br />
+          <div class="col-lg-3 col-sm-12 mt-4">
+            <a
+              class="button button-shadow"
+              style="border: 2px solid cornflowerblue;"
+              href="#service_section"
+              >Get Vouchers</a
+            >
+          </div>
+        </div>
       </div>
     </section>
     <!--================ Banner Section end =================-->
@@ -266,90 +278,59 @@
     <!--================ Price Table section end =================-->
 
     <!--================ Service section start =================-->
-    <section class="section-margin mb-5 pt-xl-235">
+    <section id="service_section" class="section-margin mb-5 pt-xl-235">
       <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2>Get Free Vouchers Now!</h2>
-          <div class="section-style"></div>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/006-server.png" alt="" />
-              </div>
-              <h3>SSD Cloud Hosting</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
-              </p>
-            </div>
+          <div class="col-lg-6 col-sm-12 mt-1">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              id="canvas_container"
+            ></div>
+            <p id="canvas_info" class="text-center mt-2"></p>
           </div>
-
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/004-home-page.png" alt="" />
+          <div class="col-lg-6 col-sm-12 mt-1">
+            <form
+              id="form_email"
+              style="display: none;"
+              class="form-subscribe"
+              action="#"
+            >
+              <h6>
+                Enter your email to save your voucher and get 2 free spin again!
+              </h6>
+              <div class="input-group align-items-center">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter Your email"
+                  required
+                />
+                <div class="input-group-append">
+                  <button class="button button-shadow2" type="submit">
+                    SUBMIT
+                  </button>
+                </div>
               </div>
-              <h3>Free Domain Transfer</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
+              <p id="form_error" style="color: red;"></p>
+            </form>
+            <div id="thank_you" style="display: none;">
+              <h5>Thank You for Participating!</h5>
+              <p style="font-size: 1em;">
+                We have saved your voucher(s) to our system.
               </p>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/007-server-1.png" alt="" />
-              </div>
-              <h3>Best Hosting Service</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/002-shield.png" alt="" />
-              </div>
-              <h3>Strong Backup</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/008-mail.png" alt="" />
-              </div>
-              <h3>Email Service</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-sm-6">
-            <div class="card-service text-center">
-              <div class="service-icon">
-                <img src="img/home/png/009-art.png" alt="" />
-              </div>
-              <h3>Data Analysis</h3>
-              <p>
-                Man greater image shall land air winged replenish whose winged
-                great fifth fruitful Set days sealand over great
-              </p>
-            </div>
+            <br />
+            <h5>Spin and Get the Voucher!</h5>
+            <p style="font-size: 1em;">
+              You have <span id="spin_left">1</span> spin left
+            </p>
+            <h6 class="mb-3">Earned Vouchers</h6>
+            <div id="voucher_container" class="voucher_container"></div>
+            <br />
           </div>
         </div>
       </div>
@@ -410,11 +391,6 @@
     </footer>
     <!-- ================ End footer Area ================= -->
 
-    <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/main.js"></script>
+    <% include partials/script.ejs %>
   </body>
 </html>

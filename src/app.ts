@@ -15,6 +15,7 @@ const MongoStore = mongo(session);
 
 // Controllers (route handlers)
 import * as homeController from "./controllers/home";
+import * as apiController from "./controllers/api";
 
 // Create Express server
 const app = express();
@@ -61,5 +62,7 @@ app.use(
  * Primary app routes.
  */
 app.get("/", homeController.index);
+app.post("/api/user",apiController.createUser);
+app.post("/api/voucher/user/:email", apiController.createVoucherByUserId);
 
 export default app;

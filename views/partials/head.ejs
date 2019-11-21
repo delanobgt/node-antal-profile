@@ -50,6 +50,7 @@
     src="https://kit.fontawesome.com/63330c0949.js"
     crossorigin="anonymous"
   ></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
 
   <style>
     html {
@@ -65,6 +66,23 @@
       overflow: hidden;
       padding: 0;
       height: 250px;
+    }
+    .hero-banner::after {
+      background: -webkit-linear-gradient(to right, #7158e6 0%, #8672e4 100%);
+      background: -moz-linear-gradient(to right, #7158e6 0%, #8672e4 100%);
+      background: -o-linear-gradient(to right, #7158e6 0%, #8672e4 100%);
+      background: linear-gradient(to right, #7158e6 0%, #8672e4 100%);
+    }
+    #canvas_container canvas {
+      cursor: pointer;
+    }
+    .voucher {
+      padding: 0.5rem;
+      border-radius: 7px;
+      border: 2px solid lightskyblue;
+      background: cornflowerblue;
+      color: white;
+      margin-right: 0.5rem;
     }
   </style>
 </head>
