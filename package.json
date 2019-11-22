@@ -10,7 +10,8 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run serve",
-    "clean": "rmdir dist /s /q",
+    "clean-win": "rmdir dist /s /q",
+    "clean-lin": "rm -r dist",
     "build": "npm run build-ts && npm run lint && npm run copy-static-assets",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",

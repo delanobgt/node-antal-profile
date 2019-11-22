@@ -28,6 +28,6 @@ app.use(
  * Primary app routes.
  */
 app.get("/", blogController.index);
-app.get("/:blog_name", blogController.show);
+app.get("/blog/:blog_index", blogController.show);
 
 export default app;
