@@ -83,8 +83,14 @@ let spinLeft = 1;
     let done = true;
 
     p.setup = function() {
+      console.log("setup");
       p.createCanvas(300, 300);
       p.smooth();
+
+      console.log("setup");
+      $('#canvas_container p').hide(0, function() {
+        console.log('p hidden');
+      });
 
       $("#canvas_container canvas").click(function() {
         if (counter > maxCounter && done && spinLeft > 0) {
