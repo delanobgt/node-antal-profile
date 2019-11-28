@@ -14,7 +14,8 @@ export const show = (req: Request, res: Response) => {
     const blogDict: {[key: string]: string} = {
         "1": "blog-1",
         "2": "blog-2",
-        "3": "blog-3"
+        "3": "blog-3",
+        "4": "blog-4",
     };
     const templateName = blogDict[String(req.params.blog_index)];
     if (!templateName) {
